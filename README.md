@@ -54,3 +54,5 @@ limitations under the License.
 
 [prismic]: https://prismic.io/
 [prismic-crash-course]: https://prismic.io/docs/technologies/nextjs-crash-course
+# crash-course-next
+Testing and playing around with Prismic 
