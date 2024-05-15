@@ -1,6 +1,4 @@
-# crash-course-next
-
-Testing and playing around with Prismic 
+### In this repo: `crash-course-next` I'm testing and playing around with Prismic...
 
 # Prismic + Next.js Crash Course
 
