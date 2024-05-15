@@ -1,4 +1,5 @@
 # crash-course-next
+
 Testing and playing around with Prismic 
 
 # Prismic + Next.js Crash Course
