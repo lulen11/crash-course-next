@@ -1,4 +1,4 @@
-### In this repo: `crash-course-next` I'm testing and playing around with Prismic...
+##### _In this repo: `crash-course-next` I'm testing and playing around with Prismic..._
 
 # Prismic + Next.js Crash Course
 
