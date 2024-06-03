@@ -156,9 +156,113 @@ export type FeaturesSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Features → Primary*
+ */
+export interface FeaturesSliceTestingSlicePrimary {
+  /**
+   * Tagline field in *Features → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Optional - Text above the main text
+   * - **API ID Path**: features.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tagline: prismic.RichTextField;
+
+  /**
+   * Text field in *Features → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Main text to display
+   * - **API ID Path**: features.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Alignment field in *Features → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Determines how to display features
+   * - **Default Value**: Left
+   * - **API ID Path**: features.primary.alignment
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  alignment: prismic.SelectField<"Left" | "Center", "filled">;
+
+  /**
+   * test field in *Features → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.primary.test
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  test: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Features → Items*
+ */
+export interface FeaturesSliceTestingSliceItem {
+  /**
+   * Image field in *Features → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Features → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Text describing the feature
+   * - **API ID Path**: features.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button Link field in *Features → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Optional - Link for the button
+   * - **API ID Path**: features.items[].buttonLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonLink: prismic.LinkField;
+
+  /**
+   * Button Text field in *Features → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Optional - Text for the button
+   * - **API ID Path**: features.items[].buttonText
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttonText: prismic.KeyTextField;
+}
+
+/**
+ * Testing Slice variation for Features Slice
+ *
+ * - **API ID**: `testingSlice`
+ * - **Description**: Features
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSliceTestingSlice = prismic.SharedSliceVariation<
+  "testingSlice",
+  Simplify<FeaturesSliceTestingSlicePrimary>,
+  Simplify<FeaturesSliceTestingSliceItem>
+>;
+
+/**
  * Slice variation for *Features*
  */
-type FeaturesSliceVariation = FeaturesSliceDefault;
+type FeaturesSliceVariation = FeaturesSliceDefault | FeaturesSliceTestingSlice;
 
 /**
  * Features Shared Slice
@@ -546,6 +650,61 @@ export type ImageAndTextSlice = prismic.SharedSlice<
   ImageAndTextSliceVariation
 >;
 
+/**
+ * Primary content in *TextBlockTest → Primary*
+ */
+export interface TextBlockTestSliceDefaultPrimary {
+  /**
+   * Heading field in *TextBlockTest → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block_test.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Paragraph field in *TextBlockTest → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_block_test.primary.paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TextBlockTest Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockTestSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextBlockTestSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextBlockTest*
+ */
+type TextBlockTestSliceVariation = TextBlockTestSliceDefault;
+
+/**
+ * TextBlockTest Shared Slice
+ *
+ * - **API ID**: `text_block_test`
+ * - **Description**: TextBlockTest
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextBlockTestSlice = prismic.SharedSlice<
+  "text_block_test",
+  TextBlockTestSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -563,8 +722,11 @@ declare module "@prismicio/client" {
       FeaturesSlice,
       FeaturesSliceDefaultPrimary,
       FeaturesSliceDefaultItem,
+      FeaturesSliceTestingSlicePrimary,
+      FeaturesSliceTestingSliceItem,
       FeaturesSliceVariation,
       FeaturesSliceDefault,
+      FeaturesSliceTestingSlice,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceDefaultItem,
@@ -580,6 +742,10 @@ declare module "@prismicio/client" {
       ImageAndTextSliceDefaultPrimary,
       ImageAndTextSliceVariation,
       ImageAndTextSliceDefault,
+      TextBlockTestSlice,
+      TextBlockTestSliceDefaultPrimary,
+      TextBlockTestSliceVariation,
+      TextBlockTestSliceDefault,
     };
   }
 }

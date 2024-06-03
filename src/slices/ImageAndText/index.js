@@ -43,6 +43,7 @@ export default function ImageAndText({ slice }) {
                   heading1: ({ children }) => (
                     <h2 className="text-4xl font-semibold text-slate-800">
                       {children}
+                      TESTING
                     </h2>
                   ),
                 }}
