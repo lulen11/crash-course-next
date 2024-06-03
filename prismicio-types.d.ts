@@ -555,6 +555,176 @@ type Hero2SliceVariation = Hero2SliceDefault | Hero2SliceImageRight;
 export type Hero2Slice = prismic.SharedSlice<"hero_2", Hero2SliceVariation>;
 
 /**
+ * Primary content in *Hero3 → Primary*
+ */
+export interface Hero3SliceDefaultPrimary {
+  /**
+   * eyebrowHeadline field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Eyebrow
+   * - **API ID Path**: hero_3.primary.eyebrowHeadline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrowHeadline: prismic.KeyTextField;
+
+  /**
+   * title field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_3.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_3.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * image field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_3.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * callToActionLabel field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_3.primary.callToActionLabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  callToActionLabel: prismic.KeyTextField;
+
+  /**
+   * callToActionLink field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_3.primary.callToActionLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  callToActionLink: prismic.LinkField;
+}
+
+/**
+ * Default variation for Hero3 Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type Hero3SliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<Hero3SliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *Hero3 → Primary*
+ */
+export interface Hero3SliceImageRightPrimary {
+  /**
+   * eyebrowHeadline field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Eyebrow
+   * - **API ID Path**: hero_3.primary.eyebrowHeadline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrowHeadline: prismic.KeyTextField;
+
+  /**
+   * title field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_3.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_3.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * image field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_3.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * callToActionLabel field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_3.primary.callToActionLabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  callToActionLabel: prismic.KeyTextField;
+
+  /**
+   * callToActionLink field in *Hero3 → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_3.primary.callToActionLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  callToActionLink: prismic.LinkField;
+}
+
+/**
+ * Image Right variation for Hero3 Slice
+ *
+ * - **API ID**: `imageRight`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type Hero3SliceImageRight = prismic.SharedSliceVariation<
+  "imageRight",
+  Simplify<Hero3SliceImageRightPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Hero3*
+ */
+type Hero3SliceVariation = Hero3SliceDefault | Hero3SliceImageRight;
+
+/**
+ * Hero3 Shared Slice
+ *
+ * - **API ID**: `hero_3`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type Hero3Slice = prismic.SharedSlice<"hero_3", Hero3SliceVariation>;
+
+/**
  * Primary content in *ImageAndText → Primary*
  */
 export interface ImageAndTextSliceDefaultPrimary {
@@ -651,6 +821,76 @@ export type ImageAndTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *TestingSlice → Primary*
+ */
+export interface TestingSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *TestingSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testing_slice.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Image field in *TestingSlice → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testing_slice.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *TestingSlice → Items*
+ */
+export interface TestingSliceSliceDefaultItem {
+  /**
+   * Content field in *TestingSlice → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testing_slice.items[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TestingSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestingSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TestingSliceSliceDefaultPrimary>,
+  Simplify<TestingSliceSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *TestingSlice*
+ */
+type TestingSliceSliceVariation = TestingSliceSliceDefault;
+
+/**
+ * TestingSlice Shared Slice
+ *
+ * - **API ID**: `testing_slice`
+ * - **Description**: TestingSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestingSliceSlice = prismic.SharedSlice<
+  "testing_slice",
+  TestingSliceSliceVariation
+>;
+
+/**
  * Primary content in *TextBlockTest → Primary*
  */
 export interface TextBlockTestSliceDefaultPrimary {
@@ -738,10 +978,21 @@ declare module "@prismicio/client" {
       Hero2SliceVariation,
       Hero2SliceDefault,
       Hero2SliceImageRight,
+      Hero3Slice,
+      Hero3SliceDefaultPrimary,
+      Hero3SliceImageRightPrimary,
+      Hero3SliceVariation,
+      Hero3SliceDefault,
+      Hero3SliceImageRight,
       ImageAndTextSlice,
       ImageAndTextSliceDefaultPrimary,
       ImageAndTextSliceVariation,
       ImageAndTextSliceDefault,
+      TestingSliceSlice,
+      TestingSliceSliceDefaultPrimary,
+      TestingSliceSliceDefaultItem,
+      TestingSliceSliceVariation,
+      TestingSliceSliceDefault,
       TextBlockTestSlice,
       TextBlockTestSliceDefaultPrimary,
       TextBlockTestSliceVariation,
