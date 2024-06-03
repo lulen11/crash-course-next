@@ -15,9 +15,9 @@ const TestingSlice = ({ slice }) => {
     >
       Placeholder component for testing_slice (variation: {slice.variation})
       Slices
-      {isFilled.richText(slice.primary.Heading) && (
+      {isFilled.richText(slice.primary.heading) && (
         <div className="es-fullpage-hero__content__intro__headline">
-          <PrismicRichText field={slice.primary.Heading} />
+          <PrismicRichText field={slice.primary.heading} />
         </div>
       )}
     </section>
